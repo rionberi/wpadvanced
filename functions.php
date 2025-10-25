@@ -14,4 +14,13 @@ function ds_menu(){
 
 add_action('after_setup_theme', 'ds_menu');
 
+add_action('wp_enqueue_script', function(){
+    if(is_page_template('about-us')){
+        wp_enqueue_scripts(
+            'tailwind-play',
+            'https://cdn.tailwindcss.com'
+        );
+    }
+});
+
 ?>
